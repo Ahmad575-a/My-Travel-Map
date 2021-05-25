@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const pinRoute =require('./routes/pins')
+const usersRoute = require('./routes/users')
 // dotenv config
 require('dotenv').config()
 
@@ -19,6 +20,7 @@ mongoose.connect(DB_LINK, {
 
 
 app.use('/pins',pinRoute)
+app.use('/users',usersRoute)
 
 
 app.listen(5000,()=> console.log('server is running ...'))
