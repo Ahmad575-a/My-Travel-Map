@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const app = express()
 const pinRoute =require('./routes/pins')
 const usersRoute = require('./routes/users')
+const cors = require('cors')
 // dotenv config
 require('dotenv').config()
 
@@ -18,7 +19,9 @@ mongoose.connect(DB_LINK, {
 .then(()=> console.log('MongoDB database is Successfully connected'))
 .catch(()=> console.log('Database connection failed!'))
 
+app.use(cors());
 
+// Routes
 app.use('/pins',pinRoute)
 app.use('/users',usersRoute)
 
