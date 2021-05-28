@@ -25,3 +25,36 @@ label {
 .username {
   font-size: 14px;
 }
+
+.date {
+  font-size: 12px;
+}
+
+form {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(88, 87, 87);
+}
+
+input,textarea {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 12px;
+  color: rgb(185, 184, 184);
+}
+
+.submitButton {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(23, 119, 31);
+  cursor: pointer;
+}
