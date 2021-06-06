@@ -15,7 +15,7 @@ export default function Login({ setShowLogin, setCurrentUsername, myStorage }) {
             password: passwordRef.current.value,
         };
         try {
-            const res = await axios.post("/users/login", user);
+            const res = await axios.post("http://localhost:5000/users/login", user);
             setCurrentUsername(res.data.username);
             myStorage.setItem('user', res.data.username);
             setShowLogin(false)
@@ -28,7 +28,7 @@ export default function Login({ setShowLogin, setCurrentUsername, myStorage }) {
         <div className="loginContainer">
             <div className="logo">
                 <Room className="logoIcon" />
-                <span>LamaPin</span>
+                <span>My Map</span>
             </div>
             <form onSubmit={handleSubmit}>
                 <input autoFocus placeholder="username" ref={usernameRef} />
@@ -41,7 +41,7 @@ export default function Login({ setShowLogin, setCurrentUsername, myStorage }) {
                 <button className="loginBtn" type="submit">
                     Login
         </button>
-                {error && <span className="failure">Something went wrong!</span>}
+                {error && <span className="failure">Oops!! Something went wrong!</span>}
             </form>
             <Cancel className="loginCancel" onClick={() => setShowLogin(false)} />
         </div>
