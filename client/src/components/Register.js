@@ -19,7 +19,7 @@ export default function Register({ setShowRegister }) {
         };
 
         try {
-            await axios.post("/users/register", newUser);
+            await axios.post("http://localhost:5000/users/register", newUser);
             setError(false);
             setSuccess(true);
         } catch (err) {
@@ -30,7 +30,7 @@ export default function Register({ setShowRegister }) {
         <div className="registerContainer">
             <div className="logo">
                 <Room className="logoIcon" />
-                <span>LamaPin</span>
+                <span>My Map</span>
             </div>
             <form onSubmit={handleSubmit}>
                 <input autoFocus placeholder="username" ref={usernameRef} />
@@ -45,9 +45,9 @@ export default function Register({ setShowRegister }) {
                     Register
         </button>
                 {success && (
-                    <span className="success">Successfull. You can login now!</span>
+                    <span className="success">Successfully Registered.. You can login now!</span>
                 )}
-                {error && <span className="failure">Something went wrong!</span>}
+                {error && <span className="failure">Oops!! Something went wrong!!</span>}
             </form>
             <Cancel
                 className="registerCancel"
