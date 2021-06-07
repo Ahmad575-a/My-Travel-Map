@@ -21,6 +21,9 @@ mongoose.connect(DB_LINK, {
 
 app.use(cors());
 
+app.use(express.urlencoded())
+app.use(express.json())
+
 // Routes
 app.use('/pins',pinRoute)
 app.use('/users',usersRoute)
