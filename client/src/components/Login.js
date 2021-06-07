@@ -5,7 +5,7 @@ import "./login.css";
 
 export default function Login({ setShowLogin, setCurrentUsername, myStorage }) {
     const [error, setError] = useState(false);
-    const usernameRef = useRef();
+    const usernameRef = useRef(); 
     const passwordRef = useRef();
 
     const handleSubmit = async (e) => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import { Room, Star} from "@material-ui/icons";
+import { Room, Star } from "@material-ui/icons";
 import "./app.css"
 import axios from "axios";
 import { format } from "timeago.js";
@@ -133,56 +133,56 @@ const App = () => {
         ))}
         {newPlace && (
           <>
-          <Marker
-            latitude={newPlace.lat}
-            longitude={newPlace.long}
-            offsetLeft={-3.5 * viewport.zoom}
-            offsetTop={-7 * viewport.zoom}
-          >
-            <Room
-              style={{
-                fontSize: 7 * viewport.zoom,
-                color: "tomato",
-                cursor: "pointer",
-              }}
-            />
-          </Marker>
-          <Popup
-            latitude={newPlace.lat}
-            longitude={newPlace.long}
-            closeButton={true}
-            closeOnClick={false}
-            anchor="left"
-            onClose={() => setNewPlace(null)} >
-            <div>
-              <form onSubmit={handleSubmit}>
-                <label>Title</label>
-                <input
-                  placeholder="Enter a title"
-                  autoFocus
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-                <label>Description</label>
-                <textarea
-                  placeholder="Tell me something about this place."
-                  onChange={(e) => setDesc(e.target.value)}
-                />
-                <label>Rating</label>
-                <select onChange={(e) => setStar(e.target.value)}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <button type="submit" className="submitButton">
-                  Add Pin
+            <Marker
+              latitude={newPlace.lat}
+              longitude={newPlace.long}
+              offsetLeft={-3.5 * viewport.zoom}
+              offsetTop={-7 * viewport.zoom}
+            >
+              <Room
+                style={{
+                  fontSize: 7 * viewport.zoom,
+                  color: "tomato",
+                  cursor: "pointer",
+                }}
+              />
+            </Marker>
+            <Popup
+              latitude={newPlace.lat}
+              longitude={newPlace.long}
+              closeButton={true}
+              closeOnClick={false}
+              anchor="left"
+              onClose={() => setNewPlace(null)} >
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <label>Title</label>
+                  <input
+                    placeholder="Enter a title"
+                    autoFocus
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                  <label>Description</label>
+                  <textarea
+                    placeholder="Tell me something about this place."
+                    onChange={(e) => setDesc(e.target.value)}
+                  />
+                  <label>Rating</label>
+                  <select onChange={(e) => setStar(e.target.value)}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <button type="submit" className="submitButton">
+                    Add Pin
                   </button>
-              </form>
-            </div>
-          </Popup>
+                </form>
+              </div>
+            </Popup>
           </>)}
-          {currentUsername ? (
+        {currentUsername ? (
           <button className="button logout" onClick={handleLogout}>
             Log out
           </button>

@@ -39,7 +39,8 @@ form {
   color: rgb(88, 87, 87);
 }
 
-input,textarea {
+input,
+textarea {
   border: none;
   border-bottom: 1px solid gray;
 }
@@ -74,19 +75,19 @@ textarea::placeholder {
   cursor: pointer;
 }
 
-.button:focus{
+.button:focus {
   outline: none;
 }
 
-.logout{
+.logout {
   background-color: red;
 }
 
-.login{
+.login {
   background-color: rgb(32, 43, 190);
   margin-right: 10px;
 }
 
-.register{
+.register {
   background-color: rgb(32, 43, 190);
 }
