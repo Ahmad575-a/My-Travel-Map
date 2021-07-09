@@ -1,0 +1,25 @@
+{
+  "name": "travel-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "concurrently \"npm start --prefix server\" \"npm start --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmad575-a/Travel-Map.git"
+  },
+  "author": "Ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmad575-a/Travel-Map/issues"
+  },
+  "homepage": "https://github.com/Ahmad575-a/Travel-Map#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
